@@ -25,10 +25,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/c18t/booklistion/internal/adapter/controller"
-	"github.com/c18t/booklistion/internal/core"
-	"github.com/c18t/booklistion/internal/inject"
-	"github.com/samber/do/v2"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -75,12 +71,6 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-}
-
-func createRootCommand() core.RunEFunc {
-	root, err := do.Invoke[controller.RootController](inject.Injector)
-	cobra.CheckErr(err)
-	return root.Exec
 }
 
 // initConfig reads in config file and ENV variables if set.
