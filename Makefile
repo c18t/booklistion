@@ -28,4 +28,4 @@ debug: app
 
 .PHONY: app
 app: main.go
-	go build -o $(BINDIR)/$@ $(GO_BUILD) $^
+	go build -o $(BINDIR)/booklistion $(GO_BUILD) $^
